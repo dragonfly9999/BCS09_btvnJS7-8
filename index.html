@@ -31,6 +31,15 @@
           </h4>
         </div>
         <div class="card-body bg-white">
+          <div class="mb-3">
+            <label for="" class="form-label">Nhập Các Số Thực</label>
+            <input type="text"
+              class="form-control" name="" id="nhapSothuc" aria-describedby="helpId" placeholder="">
+              <p class="mt-1" style="color: red;" id="errorTextST"></p>
+              <div class="mt-3">
+                <div id="htMang2" class="alert bg-warning opacity-50 p-2"></div>
+              </div>
+          </div>
           <div class="mb-3 mt-2">
             <label for="" class="form-label">Nhập Các Số Nguyên:</label>
             <input
@@ -41,16 +50,31 @@
               aria-describedby="helpId"
               placeholder="" 
             />
+            <p class="mt-1" style="color: red;" id="errorText"></p>
             <div class="mt-3">
               <div id="htMang1" class="alert bg-info opacity-50 p-2"></div>
             </div>
           </div>
+          <h5>Nhập vào 2 vị trí muốn thay đổi trong mảng(sử dụng khi muốn đảo vị trí của giá trị các số nguyên trong mảng):</h5>
+          <div class="mb-3">
+            <label for="" class="form-label">Vị Trí 1:</label>
+            <input type="text"
+              class="form-control" name="" id="viTri1" aria-describedby="helpId" placeholder="">
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label"> Vị trí 2:</label>
+            <input type="text"
+              class="form-control" name="" id="viTri2" aria-describedby="helpId" placeholder="">
+          </div>
         </div>
         <div class="card-footer bg-light">
           <div class="yc_1 d-flex">
+            <div class="me-2">
+              <button id="nhanSoYc2" class="btn btn-info">Nhận Số Thực Vào Mảng</button>
+            </div>
             <div class="mb-2 me-2">
               <button id="nhanSoYc1" class="btn btn-warning">
-                Nhận Số Vào Mảng
+                Nhận Số Nguyên Vào Mảng
               </button>
             </div>
             <div class="me-2">
@@ -67,320 +91,32 @@
             <div class="me-2">
               <button id="soDuongNhoNhat" class="btn btn-success">Số Dương Nhỏ Nhất</button>
             </div>
+            <div class="me-2">
+              <button id="soChanCuoiCung" class="btn btn-primary">Tìm Số Chẵn Cuối</button>
+            </div>
+            <div class="me-2">
+              <button id="doiCho" class="btn btn-warning">
+                Đổi chỗ
+              </button>
+            </div>
+            <div class="me-2">
+              <button id="sapXepMang" class="btn btn-info">Sắp Xếp</button>
+            </div>
+            <div class="me-2">
+              <button id="sntDauTien" class="btn btn-dark">Số Nguyên Tố Đầu Tiên</button>
+            </div>
+            <div class="me-2">
+              <button id="demSoNguyen" class="btn btn-secondary">Đếm Số Nguyên</button>
+            </div>
+            <div >
+              <button id="soSanhAd" class="btn btn-danger">Âm Dương So Sánh </button>
+            </div>
           </div>
           <div class="mt-2 p-2 alert bg-success opacity-50" id="ketQua1"></div>
         </div>
       </div>
     </div>
     <br /><br /><br /><br /><br /><br /><br />
-    <!-- <div class="container w-25">
-      <div class="card border-5" >
-        <div class="card-header text-center bg-dark">
-            <h4 style="color: white;">Yêu cầu 1: Tổng các số dương trong các số nguyên đã nhập</h4>
-        </div>
-      <div class="card-body bg-white">
-        <div class="mb-3 mt-2">
-            <label  for="" class="form-label">Nhập Các Số Nguyên:</label>
-            <input
-              type="text"
-              class="form-control"
-              name=""
-              id="nhapSo"
-              aria-describedby="helpId"
-              placeholder=""
-            />
-            <div class="mt-3">
-              <div class="alert bg-info opacity-50"></div>
-            </div>
-          </div>
-      </div>
-      <div class="card-footer bg-light text-center">
-        <div class="yc_1">
-            <div class="mb-2">
-                <button class="btn btn-warning">Nhận Số Vào Mảng</button>
-            </div>
-            <div>
-              <button class="btn btn-dark">Tổng Số Dương</button>
-            </div>
-            <div class="mt-2 alert bg-success opacity-50" id="ketQua1"></div>
-          </div>
-      </div>
-      </div>
-    </div>
-    <div class="container w-25">
-      <div class="card border-5" >
-        <div class="card-header text-center bg-dark">
-            <h4 style="color: white;">Yêu cầu 1: Tổng các số dương trong các số nguyên đã nhập</h4>
-        </div>
-      <div class="card-body bg-white">
-        <div class="mb-3 mt-2">
-            <label  for="" class="form-label">Nhập Các Số Nguyên:</label>
-            <input
-              type="text"
-              class="form-control"
-              name=""
-              id="nhapSo"
-              aria-describedby="helpId"
-              placeholder=""
-            />
-            <div class="mt-3">
-              <div class="alert bg-info opacity-50"></div>
-            </div>
-          </div>
-      </div>
-      <div class="card-footer bg-light text-center">
-        <div class="yc_1">
-            <div class="mb-2">
-                <button class="btn btn-warning">Nhận Số Vào Mảng</button>
-            </div>
-            <div>
-              <button class="btn btn-dark">Tổng Số Dương</button>
-            </div>
-            <div class="mt-2 alert bg-success opacity-50" id="ketQua1"></div>
-          </div>
-      </div>
-      </div>
-    </div>
-    <div class="container w-25">
-      <div class="card border-5" >
-        <div class="card-header text-center bg-dark">
-            <h4 style="color: white;">Yêu cầu 1: Tổng các số dương trong các số nguyên đã nhập</h4>
-        </div>
-      <div class="card-body bg-white">
-        <div class="mb-3 mt-2">
-            <label  for="" class="form-label">Nhập Các Số Nguyên:</label>
-            <input
-              type="text"
-              class="form-control"
-              name=""
-              id="nhapSo"
-              aria-describedby="helpId"
-              placeholder=""
-            />
-            <div class="mt-3">
-              <div class="alert bg-info opacity-50"></div>
-            </div>
-          </div>
-      </div>
-      <div class="card-footer bg-light text-center">
-        <div class="yc_1">
-            <div class="mb-2">
-                <button class="btn btn-warning">Nhận Số Vào Mảng</button>
-            </div>
-            <div>
-              <button class="btn btn-dark">Tổng Số Dương</button>
-            </div>
-            <div class="mt-2 alert bg-success opacity-50" id="ketQua1"></div>
-          </div>
-      </div>
-      </div>
-    </div>
-    <div class="container w-25">
-      <div class="card border-5" >
-        <div class="card-header text-center bg-dark">
-            <h4 style="color: white;">Yêu cầu 1: Tổng các số dương trong các số nguyên đã nhập</h4>
-        </div>
-      <div class="card-body bg-white">
-        <div class="mb-3 mt-2">
-            <label  for="" class="form-label">Nhập Các Số Nguyên:</label>
-            <input
-              type="text"
-              class="form-control"
-              name=""
-              id="nhapSo"
-              aria-describedby="helpId"
-              placeholder=""
-            />
-            <div class="mt-3">
-              <div class="alert bg-info opacity-50"></div>
-            </div>
-          </div>
-      </div>
-      <div class="card-footer bg-light text-center">
-        <div class="yc_1">
-            <div class="mb-2">
-                <button class="btn btn-warning">Nhận Số Vào Mảng</button>
-            </div>
-            <div>
-              <button class="btn btn-dark">Tổng Số Dương</button>
-            </div>
-            <div class="mt-2 alert bg-success opacity-50" id="ketQua1"></div>
-          </div>
-      </div>
-      </div>
-    </div>
-    <div class="container w-25">
-      <div class="card border-5" >
-        <div class="card-header text-center bg-dark">
-            <h4 style="color: white;">Yêu cầu 1: Tổng các số dương trong các số nguyên đã nhập</h4>
-        </div>
-      <div class="card-body bg-white">
-        <div class="mb-3 mt-2">
-            <label  for="" class="form-label">Nhập Các Số Nguyên:</label>
-            <input
-              type="text"
-              class="form-control"
-              name=""
-              id="nhapSo"
-              aria-describedby="helpId"
-              placeholder=""
-            />
-            <div class="mt-3">
-              <div class="alert bg-info opacity-50"></div>
-            </div>
-          </div>
-      </div>
-      <div class="card-footer bg-light text-center">
-        <div class="yc_1">
-            <div class="mb-2">
-                <button class="btn btn-warning">Nhận Số Vào Mảng</button>
-            </div>
-            <div>
-              <button class="btn btn-dark">Tổng Số Dương</button>
-            </div>
-            <div class="mt-2 alert bg-success opacity-50" id="ketQua1"></div>
-          </div>
-      </div>
-      </div>
-    </div>
-    <div class="container w-25">
-      <div class="card border-5" >
-        <div class="card-header text-center bg-dark">
-            <h4 style="color: white;">Yêu cầu 1: Tổng các số dương trong các số nguyên đã nhập</h4>
-        </div>
-      <div class="card-body bg-white">
-        <div class="mb-3 mt-2">
-            <label  for="" class="form-label">Nhập Các Số Nguyên:</label>
-            <input
-              type="text"
-              class="form-control"
-              name=""
-              id="nhapSo"
-              aria-describedby="helpId"
-              placeholder=""
-            />
-            <div class="mt-3">
-              <div class="alert bg-info opacity-50"></div>
-            </div>
-          </div>
-      </div>
-      <div class="card-footer bg-light text-center">
-        <div class="yc_1">
-            <div class="mb-2">
-                <button class="btn btn-warning">Nhận Số Vào Mảng</button>
-            </div>
-            <div>
-              <button class="btn btn-dark">Tổng Số Dương</button>
-            </div>
-            <div class="mt-2 alert bg-success opacity-50" id="ketQua1"></div>
-          </div>
-      </div>
-      </div>
-    </div>
-    <div class="container w-25">
-      <div class="card border-5" >
-        <div class="card-header text-center bg-dark">
-            <h4 style="color: white;">Yêu cầu 1: Tổng các số dương trong các số nguyên đã nhập</h4>
-        </div>
-      <div class="card-body bg-white">
-        <div class="mb-3 mt-2">
-            <label  for="" class="form-label">Nhập Các Số Nguyên:</label>
-            <input
-              type="text"
-              class="form-control"
-              name=""
-              id="nhapSo"
-              aria-describedby="helpId"
-              placeholder=""
-            />
-            <div class="mt-3">
-              <div class="alert bg-info opacity-50"></div>
-            </div>
-          </div>
-      </div>
-      <div class="card-footer bg-light text-center">
-        <div class="yc_1">
-            <div class="mb-2">
-                <button class="btn btn-warning">Nhận Số Vào Mảng</button>
-            </div>
-            <div>
-              <button class="btn btn-dark">Tổng Số Dương</button>
-            </div>
-            <div class="mt-2 alert bg-success opacity-50" id="ketQua1"></div>
-          </div>
-      </div>
-      </div>
-    </div>
-    <div class="container w-25">
-      <div class="card border-5" >
-        <div class="card-header text-center bg-dark">
-            <h4 style="color: white;">Yêu cầu 1: Tổng các số dương trong các số nguyên đã nhập</h4>
-        </div>
-      <div class="card-body bg-white">
-        <div class="mb-3 mt-2">
-            <label  for="" class="form-label">Nhập Các Số Nguyên:</label>
-            <input
-              type="text"
-              class="form-control"
-              name=""
-              id="nhapSo"
-              aria-describedby="helpId"
-              placeholder=""
-            />
-            <div class="mt-3">
-              <div class="alert bg-info opacity-50"></div>
-            </div>
-          </div>
-      </div>
-      <div class="card-footer bg-light text-center">
-        <div class="yc_1">
-            <div class="mb-2">
-                <button class="btn btn-warning">Nhận Số Vào Mảng</button>
-            </div>
-            <div>
-              <button class="btn btn-dark">Tổng Số Dương</button>
-            </div>
-            <div class="mt-2 alert bg-success opacity-50" id="ketQua1"></div>
-          </div>
-      </div>
-      </div>
-    </div>
-    <div class="container w-25">
-      <div class="card border-5" >
-        <div class="card-header text-center bg-dark">
-            <h4 style="color: white;">Yêu cầu 1: Tổng các số dương trong các số nguyên đã nhập</h4>
-        </div>
-      <div class="card-body bg-white">
-        <div class="mb-3 mt-2">
-            <label  for="" class="form-label">Nhập Các Số Nguyên:</label>
-            <input
-              type="text"
-              class="form-control"
-              name=""
-              id="nhapSo"
-              aria-describedby="helpId"
-              placeholder=""
-            />
-            <div class="mt-3">
-              <div class="alert bg-info opacity-50"></div>
-            </div>
-          </div>
-      </div>
-      <div class="card-footer bg-light text-center">
-        <div class="yc_1">
-            <div class="mb-2">
-                <button class="btn btn-warning">Nhận Số Vào Mảng</button>
-            </div>
-            <div>
-              <button class="btn btn-dark">Tổng Số Dương</button>
-            </div>
-            <div class="mt-2 alert bg-success opacity-50" id="ketQua1"></div>
-          </div>
-      </div>
-      </div>
-    </div> -->
-    <br /><br /><br /><br /><br />
-
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
